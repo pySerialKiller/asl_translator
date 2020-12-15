@@ -1,2 +1,2 @@
 # asl_translator
-American sign language translator
+American sign language to text translator
