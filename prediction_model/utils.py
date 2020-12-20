@@ -5,7 +5,7 @@ from model import PredictionModel
 IMG_HEIGHT = 200
 IMG_WIDTH = 200
 DEFAULT_DATASET = "dataset/train"
-IMAGE_FORMAT = "*/*.jpg"
+IMAGE_FORMAT = "*.jpg"
 LABEL_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G',
                'H', 'I', 'J', 'K', 'L', 'M', 'N',
                'O', 'P', 'Q', 'R', 'S', 'T', 'U',
@@ -53,4 +53,6 @@ def save_model(model):
         return save(model.state_dict(), path.join(path.dirname(path.abspath(__file__)), 'model.th'))
 
 if __name__ == '__main__':
-    pass
+    dataset = load_data()
+    for x, y in dataset:
+        print(y)
