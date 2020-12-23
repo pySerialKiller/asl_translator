@@ -1,6 +1,7 @@
 from model import PredictionModel
 from os import path
 from utils import load_data, accuracy, save_model
+import data_transforms
 
 
 def train(args):
@@ -19,6 +20,12 @@ def train(args):
         model.load_state_dict(torch.load(path.join(path.dirname(path.abspath(__file__)), 'model.th')))
     optimizer = torch.optim.SGD(model.parameters(), lr=args.learning_rate, momentum=0.9)
     loss = torch.nn.CrossEntropyLoss()
+
+    custom_transform = data_transforms.Compose([
+        data_transforms.ToTensor(),
+        data_transforms.Normalize,
+        data_transforms.ColorJitter()
+    ])
 
     print("Loading dataset")
     train_data = load_data('dataset/train')

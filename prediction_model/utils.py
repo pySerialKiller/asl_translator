@@ -10,7 +10,7 @@ LABEL_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G',
                'H', 'I', 'J', 'K', 'L', 'M', 'N',
                'O', 'P', 'Q', 'R', 'S', 'T', 'U',
                'V', 'W', 'X', 'Y', 'Z']
-
+ 
 
 class CustomDataset(Dataset):
     def __init__(self, dataset_path=DEFAULT_DATASET, transform=data_transforms.ToTensor()):

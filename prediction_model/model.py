@@ -2,7 +2,7 @@ import torch.nn as nn
 
 
 class PredictionModel(nn.Module):
-    def __init__(self, channel_list=[16, 32, 32, 32]):
+    def __init__(self, channel_list=[32, 32, 64, 64, 128, 128, 256, 256]):
         super().__init__()
         num_features = 28
         in_channels = 3
